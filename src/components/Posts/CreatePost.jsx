@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const CreatePost = (props) => {
@@ -17,14 +17,14 @@ const CreatePost = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(newPost);
     try {
       // Send a POST request to create a new post
       await axios.post(
         "https://copy-paste-xj2d.onrender.com/api/posts",
         newPost
       );
-      // Refresh the posts after creating a new one
-      props.fetchPosts();
+      // Refresh the posts after creating a new on
       // Clear the form fields
       setNewPost({
         username: "",
@@ -87,6 +87,14 @@ const CreatePost = (props) => {
             onChange={handleInputChange}
             className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500"
           />
+        </div>
+        <div className="flex justify-center">
+          <button
+            onClick={handleSubmit}
+            className="p-2 bg-blue-400 rounded-lg font-bold hover:bg-red-500 hover:text-white"
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>

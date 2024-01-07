@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const PostCards = (props) => {
   return (
     <div
-      key={props.key}
+      key={props.post.key}
       className="w-[90%] md:w-[420px] rounded-lg shadow-lg font-heading"
     >
       <div className="lg:order-first">
