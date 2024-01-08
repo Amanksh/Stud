@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CreatePost from "./components/Posts/CreatePost";
 import Posts from "./components/Posts/Posts";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Header";
 
 function App() {
   const [posts, setPosts] = useState([]);
